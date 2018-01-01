@@ -26,5 +26,6 @@ writer.save()
 {% endhighlight %}
 
 # Result
-![Result]({{ site.url }}{{ site.baseurl }}/assets/images/2018-01-01-pandas-file-connect-test.png)
+![Result]({{ site.url }}{{ site.baseurl }}/assets/images/2018-01-01-pandas-file-connect-test-result.png)
+![Chart]({{ site.url }}{{ site.baseurl }}/assets/images/2018-01-01-pandas-file-connect-test-chart.png)
 ### hdf is fastest file format when save a DataFrame of load a file.
