@@ -6,7 +6,7 @@ date:   2018-01-01 14:37:00
 categories: [programming]
 ---
 # CODE
-{% highlight python3 %}
+{% highlight python %}
 import pandas as pd
 
 # 46.8MB as a csv file.
