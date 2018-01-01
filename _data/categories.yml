@@ -1,8 +1,8 @@
-- slug: design
-  name: Design
+- slug: experiment
+  name: Experiment
 
-- slug: tools
-  name: Tools
+- slug: programming
+  name: Programming
 
-- slug: productivity
-  name: Productivity
+- slug: paper
+  name: Paper
