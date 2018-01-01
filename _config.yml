@@ -1,19 +1,17 @@
 # Site settings
-title: Daktilo
+title: Willbelucky
 description: >
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Master of Financial Engineering Course in KAIST.
 
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://hitchhiker.ma" # the base hostname & protocol for your site
+url: "http://willbelucky.github.io" # the base hostname & protocol for your site
 
 author:
-  fullname: Motaquillah Maddane
-  googleplus: https://www.google.com/+MotaquillahMaddane
-  github: kronik3r
-  twitter: electrik_frog
-  # disqus: your_disqus_forum_shortname
+  fullname: Jaekyoung Kim
+  facebook: https://www.facebook.com/willbehappy
+  github: willbelucky
+  linkedin: https://www.linkedin.com/in/jaekyoung-kim-2a0032132/
+  disqus: jaekyoung_kim
 
 # google_analytics: 'UA-XXXXXXXX-X'
 
