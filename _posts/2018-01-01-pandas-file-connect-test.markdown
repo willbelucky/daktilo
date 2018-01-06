@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Let's test pandas file connecting methods."
-subtitle: "excel vs. csv vs. hdf"
+title:  "Python pandas read_excel vs. read_csv vs. read_hdf"
+subtitle: "What is the fastest way to save and read pandas.DataFrame?"
 date:   2018-01-01 14:37:00
 categories: [programming]
 ---
@@ -28,4 +28,4 @@ writer.save()
 # Result
 ![Result]({{ site.url }}{{ site.baseurl }}/assets/images/2018-01-01-pandas-file-connect-test-result.png)
 ![Chart]({{ site.url }}{{ site.baseurl }}/assets/images/2018-01-01-pandas-file-connect-test-chart.png)
-### hdf is fastest file format when save a DataFrame of load a file.
+### Hdf is the fastest way to save and read pandas.DataFrame.
