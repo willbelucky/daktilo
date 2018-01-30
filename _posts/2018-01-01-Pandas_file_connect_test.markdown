@@ -5,7 +5,7 @@ subtitle: "What is the fastest way to save and read pandas.DataFrame?"
 date:   2018-01-01 14:37:00
 categories: [programming]
 ---
-# CODE
+# Python code
 {% highlight python %}
 import pandas as pd
 
@@ -26,6 +26,6 @@ writer.save()
 {% endhighlight %}
 
 # Result
-![Result]({{ site.url }}{{ site.baseurl }}/assets/images/2018-01-01-pandas-file-connect-test-result.png)
-![Chart]({{ site.url }}{{ site.baseurl }}/assets/images/2018-01-01-pandas-file-connect-test-chart.png)
+![Result]({{ site.url }}{{ site.baseurl }}/assets/images/2018-01-01-Pandas_file_connect_test-result.png)
+![Chart]({{ site.url }}{{ site.baseurl }}/assets/images/2018-01-01-Pandas_file_connect_test-chart.png)
 ### Hdf is the fastest way to save and read pandas.DataFrame.
