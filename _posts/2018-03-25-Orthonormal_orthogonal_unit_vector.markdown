@@ -16,11 +16,11 @@ By extension, orthogonality is also used to refer to the separation of specific 
 A is a 3 by 3 matrix.  
 $$
     A =
-    \begin{matrix}
+    \begin{pmatrix}
     a & b & c \\
     d & e & f \\
     g & h & i \\
-    \end{matrix}
+    \end{pmatrix}
 $$  
 A is an orthogonal matrix if inner product values of two columns are 0.
 In other words, $$ ab + de + gh = 0 $$ and $$ bc + ef + hi = 0 $$ and $$ ca + fd + ig = 0 $$.
