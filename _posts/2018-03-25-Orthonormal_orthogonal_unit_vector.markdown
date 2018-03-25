@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Orthonormal & orthogonal & unit vector
+title:  "Orthonormal & orthogonal & unit vector"
 subtitle: "Definitions and Conditions for orthonormal & orthogonal & unit vector"
 date:   2018-03-25 00:00:00
 categories: [statistics]
