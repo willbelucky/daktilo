@@ -69,7 +69,7 @@ RUN;
 {% endhighlight %}
 
 # Regression result
-![SimpleLinearRegression]({{ site.url }}{{ site.baseurl }}/assets/images/2018-01-30-Basic_regression_interpretation-simple_linear_regression.png)
+![SimpleLinearRegression](https://dl.dropboxusercontent.com/s/d7qg0uksb56euez/2018-01-30-Basic_regression_interpretation-simple_linear_regression.png)
 
 ## Interpretation
 - The number of sample

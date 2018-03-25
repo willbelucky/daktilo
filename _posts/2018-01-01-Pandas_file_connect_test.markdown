@@ -26,6 +26,6 @@ writer.save()
 {% endhighlight %}
 
 # Result
-![Result]({{ site.url }}{{ site.baseurl }}/assets/images/2018-01-01-Pandas_file_connect_test-result.png)
-![Chart]({{ site.url }}{{ site.baseurl }}/assets/images/2018-01-01-Pandas_file_connect_test-chart.png)
+![Result](https://dl.dropboxusercontent.com/s/a5y5imlvhrn2z4d/2018-01-01-Pandas_file_connect_test-result.png)
+![Chart](https://dl.dropboxusercontent.com/s/3fln9y0mnstnujo/2018-01-01-Pandas_file-connect_test-chart.png)
 ### Hdf is the fastest way to save and read pandas.DataFrame.
