@@ -7,7 +7,7 @@ categories: [statistics]
 ---
 
 # Loading Matrix
-$$ \xi_i = PRINi $$ \\
+$$\xi_i$$ is i-th principal component. \\
 $$
     \begin{matrix}
             & \xi_1            & \xi_2            & \xi_3            \\
@@ -26,6 +26,7 @@ $$
 
 # Eigen value
 $$\lambda_i$$ is an eigen value of $$\xi_i$$. \\
+$$\lambda_i = Var(\xi_i) = corr(\xi_i, X_1)^2 + corr(\xi_i, X_2)^2 + ... + corr(\xi_i, X_p)^2$$ \\
 $$
     \begin{matrix}
                 & \xi_1     & \xi_2     & \xi_3     \\
