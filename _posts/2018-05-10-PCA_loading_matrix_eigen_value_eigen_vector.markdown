@@ -25,7 +25,7 @@ $$
 $$
 
 # Eigen value
-$$\lambda_i$$ is an eigen value of $$\xi_i$$.
+$$\lambda_i$$ is an eigen value of $$\xi_i$$. \\
 $$
     \begin{matrix}
                 & \xi_1     & \xi_2     & \xi_3     \\
@@ -34,7 +34,7 @@ $$
 $$
 
 # Eigen vector
-$$\beta_{ij}$$ is an eigen vector of $$\xi_i$$ and $$std(X_j)$$.
+$$\beta_{ij}$$ is an eigen vector of $$\xi_i$$ and $$std(X_j)$$. \\
 $$
     \begin{matrix}
                  & \xi_1                                     & \xi_2                                     & \xi_3                                     \\
