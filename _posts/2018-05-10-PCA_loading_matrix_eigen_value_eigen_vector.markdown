@@ -9,12 +9,12 @@ categories: [statistics]
 # Loading Matrix
 $$ \xi_i = PRINi $$ \\
 $$
-    \begin{pmatrix}
+    \begin{matrix}
             & \xi_1            & \xi_2            & \xi_3            \\
         X_1 & corr(\xi_1, X_1) & corr(\xi_2, X_1) & corr(\xi_3, X_1) \\
         X_2 & corr(\xi_1, X_2) & corr(\xi_2, X_2) & corr(\xi_3, X_2) \\
         X_3 & corr(\xi_1, X_3) & corr(\xi_2, X_3) & corr(\xi_3, X_3) \\
-    \end{pmatrix}
+    \end{matrix}
 $$
 
 ## Loading Matrix is orthogonal.
@@ -26,26 +26,26 @@ $$
 
 # Eigen value
 $$
-    \begin{pmatrix}
-                    & \xi_1     & \xi_2     & \xi_3     \\
-        eigen_value & \lambda_1 & \lambda_2 & \lambda_3 \\
-    \end{pmatrix}
+    \begin{matrix}
+                & \xi_1     & \xi_2     & \xi_3     \\
+        \lambda & \lambda_1 & \lambda_2 & \lambda_3 \\
+    \end{matrix}
 $$
 
 # Eigen vector
 $$
-    \begin{pmatrix}
+    \begin{matrix}
                  & \xi_1                                     & \xi_2                                     & \xi_3                                     \\
         std(X_1) & \frac{corr(\xi_1, X_1)}{\sqrt{\lambda_1}} & \frac{corr(\xi_2, X_1)}{\sqrt{\lambda_2}} & \frac{corr(\xi_3, X_1)}{\sqrt{\lambda_3}} \\
         std(X_2) & \frac{corr(\xi_1, X_2)}{\sqrt{\lambda_1}} & \frac{corr(\xi_2, X_2)}{\sqrt{\lambda_2}} & \frac{corr(\xi_3, X_2)}{\sqrt{\lambda_3}} \\
         std(X_3) & \frac{corr(\xi_1, X_3)}{\sqrt{\lambda_1}} & \frac{corr(\xi_2, X_3)}{\sqrt{\lambda_2}} & \frac{corr(\xi_3, X_3)}{\sqrt{\lambda_3}} \\
-    \end{pmatrix} =
-    \begin{pmatrix}
+    \end{matrix} =
+    \begin{matrix}
                  & \xi_1      & \xi_2      & \xi_3      \\
         std(X_1) & \beta_{11} & \beta_{21} & \beta_{31} \\
         std(X_2) & \beta_{12} & \beta_{22} & \beta_{32} \\
         std(X_3) & \beta_{13} & \beta_{23} & \beta_{33} \\
-    \end{pmatrix}
+    \end{matrix}
 $$
 
 ## Eigen vector is orthonormal.
@@ -64,7 +64,7 @@ $$
     \beta_{31}^2 + \beta_{32}^2 + \beta_{33}^2 = 1
 $$
 
-### Simple linear regression $$X_1$$ on $$\xi_1, \xi_2, \xi_3$$
+## Simple linear regression $$X_1$$ on $$\xi_1, \xi_2, \xi_3$$
 Because no information is lost by using PCA,
 $$
     X_1 = \beta_{11}\xi_1 + \beta_{21}\xi_2 + \beta_{31}\xi_3
