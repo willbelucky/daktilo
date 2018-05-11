@@ -7,8 +7,8 @@ categories: [statistics]
 ---
 
 # Loading Matrix
+$$ \xi_i = PRINi $$ \\
 $$
-    \xi_i = PRINi \\
     \begin{table}[]
     \centering
     \label{Loading Matrix}
@@ -85,10 +85,7 @@ $$
     \beta_{31}^2 + \beta_{32}^2 + \beta_{33}^2 = 1
 $$
 
-### Simple linear regression
-$$
-    X_1 \text{ on } \xi_1, \xi_2, \xi_3
-$$
+### Simple linear regression $$X_1$$ on $$\xi_1, \xi_2, \xi_3$$
 Because no information is lost by using PCA,
 $$
     X_1 = \beta_{11}\xi_1 + \beta_{21}\xi_2 + \beta_{31}\xi_3
