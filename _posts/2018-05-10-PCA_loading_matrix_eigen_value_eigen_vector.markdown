@@ -8,6 +8,7 @@ categories: [statistics]
 
 # Loading Matrix
 $$\xi_i$$ is i-th principal component. \\
+$$X_i$$ is i-th original variable. \\
 $$
     \begin{matrix}
             & \xi_1            & \xi_2            & \xi_3            \\
