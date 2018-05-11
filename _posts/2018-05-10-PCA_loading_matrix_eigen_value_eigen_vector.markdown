@@ -74,7 +74,7 @@ $$
 $$
 
 ### Eigen vector is a unit vector.
-$#
+$$
     \beta_{11}^2 + \beta_{12}^2 + \beta_{13}^2 = 1 \\
     \beta_{21}^2 + \beta_{22}^2 + \beta_{23}^2 = 1 \\
     \beta_{31}^2 + \beta_{32}^2 + \beta_{33}^2 = 1
