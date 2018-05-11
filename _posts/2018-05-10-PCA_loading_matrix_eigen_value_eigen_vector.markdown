@@ -10,15 +10,13 @@ categories: [statistics]
 $$
     \xi_i = PRINi \\
     A =
-    \begin{table}
-        \begin{tabular}{|l|l|l|l|}
+    \begin{pmatrix}{|l|l|l|l|}
         \hline
             & \xi_1            & \xi_2            & \xi_3            \\ \hline
         X_1 & corr(\xi_1, X_1) & corr(\xi_2, X_1) & corr(\xi_3, X_1) \\ \hline
         X_2 & corr(\xi_1, X_2) & corr(\xi_2, X_2) & corr(\xi_3, X_2) \\ \hline
         X_3 & corr(\xi_1, X_3) & corr(\xi_2, X_3) & corr(\xi_3, X_3) \\ \hline
-        \end{tabular}
-    \end{table}
+    \end{pmatrix}
 $$
 
 ## Loading Matrix is orthogonal.
@@ -32,36 +30,30 @@ $$
 $$
     eigen_value_1 = \lambda_1 = Var(\xi_1) = corr(\xi_1, X_1)^2 + corr(\xi_1, X_2)^2 + corr(\xi_1, X_3)^2\\
     A =
-    \begin{table}
-        \begin{tabular}{|l|l|l|l|}
+    \begin{pmatrix}{|l|l|l|l|}
         \hline
                     & \xi_1     & \xi_2     & \xi_3     \\ \hline
         eigen_value & \lambda_1 & \lambda_2 & \lambda_3 \\ \hline
-        \end{tabular}
-    \end{table}
+    \end{pmatrix}
 $$
 
 # Eigen vector
 $$
     A =
-    \begin{table}
-        \begin{tabular}{|l|l|l|l|}
+    \begin{pmatrix}{|l|l|l|l|}
         \hline
                  & \xi_1                                     & \xi_2                                     & \xi_3                                     \\ \hline
         std(X_1) & \frac{corr(\xi_1, X_1)}{\sqrt{\lambda_1}} & \frac{corr(\xi_2, X_1)}{\sqrt{\lambda_2}} & \frac{corr(\xi_3, X_1)}{\sqrt{\lambda_3}} \\ \hline
         std(X_2) & \frac{corr(\xi_1, X_2)}{\sqrt{\lambda_1}} & \frac{corr(\xi_2, X_2)}{\sqrt{\lambda_2}} & \frac{corr(\xi_3, X_2)}{\sqrt{\lambda_3}} \\ \hline
         std(X_3) & \frac{corr(\xi_1, X_3)}{\sqrt{\lambda_1}} & \frac{corr(\xi_2, X_3)}{\sqrt{\lambda_2}} & \frac{corr(\xi_3, X_3)}{\sqrt{\lambda_3}} \\ \hline
-        \end{tabular}
-    \end{table} =
-    \begin{table}
-        \begin{tabular}{|l|l|l|l|}
+    \end{pmatrix} =
+    \begin{pmatrix}{|l|l|l|l|}
         \hline
                  & \xi_1      & \xi_2      & \xi_3      \\ \hline
         std(X_1) & \beta_{11} & \beta_{21} & \beta_{31} \\ \hline
         std(X_2) & \beta_{12} & \beta_{22} & \beta_{32} \\ \hline
         std(X_3) & \beta_{13} & \beta_{23} & \beta_{33} \\ \hline
-        \end{tabular}
-    \end{table}
+    \end{pmatrix}
 $$
 
 ## Eigen vector is orthonormal.
