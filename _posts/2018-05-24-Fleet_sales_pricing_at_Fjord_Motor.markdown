@@ -2,9 +2,13 @@
 layout: post
 title:  "Fleet sales pricing at Fjord Motor"
 subtitle: "Robert Phillips"
-date:   2000-05-24 00:00:00
+date:   2018-05-24 00:00:00
 categories: [paper]
 ---
+
+# Case source
+case centre
+https://www.thecasecentre.org/educators/products/view?&id=132712
 
 # Data reading
 {% highlight python %}
@@ -92,7 +96,7 @@ def calculate_winning_prob(a, b, p):
 {% endhighlight %}
 
 2) Make a function for calculating a sum of log likelihoods.\\
-$$logLikelihood = log(ρ^y(1−ρ)^{1−y})$$\\
+$$logLikelihood = log(ρ^y(1−ρ)^{1−y})$$
 {% highlight python %}
 def calculate_sum_of_log_likelihood(a, b, args):
     """
@@ -110,7 +114,7 @@ def calculate_sum_of_log_likelihood(a, b, args):
     return log_likelihood_sum
 {% endhighlight %}
 
-3) Becasue numpy has only a minize optimizer, make a negative function of the function for calculating a sum of log likelihoods.\\
+3) Becasue numpy has only a minize optimizer, make a negative function of the function for calculating a sum of log likelihoods.
 {% highlight python %}
 def calculate_negative_sum_of_log_likelihood(param, *args):
     a, b = param
@@ -118,7 +122,7 @@ def calculate_negative_sum_of_log_likelihood(param, *args):
     return negative_log_likelihood_sum
 {% endhighlight %}
 
-4) Maximize the sum of log likelihood by minimizing the negative sum of log likelihoods.\\
+4) Maximize the sum of log likelihood by minimizing the negative sum of log likelihoods.
 {% highlight python %}
 def maximize_log_likelihood(args):
     """
@@ -135,7 +139,7 @@ def maximize_log_likelihood(args):
     return optimal_a, optimal_b
 {% endhighlight %}
 
-5) Calculate the values of a and b.\\
+5) Calculate the values of a and b.
 {% highlight python %}
 MSRP = 25000
 all_data = get_all_data(MSRP)
@@ -143,13 +147,13 @@ args = (all_data[P], all_data[WIN])
 optimal_a, optimal_b = maximize_log_likelihood(args)
 print("a: {:.2f}, b: {:.2f}".format(optimal_a, optimal_b))
 {% endhighlight %}
-a: -7.76, b: 9.16\\
+a: -7.76, b: 9.16
 
 ## What is the optimum price Fjord should offer, assuming it is going to offer a single price for each bid?
 Based on a and b we calcuated, we need to find a single price maximizing sum of margin. For that,\\
 1) Calculate the expected margin.\\
 cost = 15000\\
-$$expectedMargin = (singlePrice - cost) *  \rho(p)$$\\
+$$expectedMargin = (singlePrice - cost) *  \rho(p)$$
 {% highlight python %}
 COST = 15000
 def calculate_expected_margin(single_price, args):
@@ -165,7 +169,7 @@ def calculate_expected_margin(single_price, args):
     return expected_margin
 {% endhighlight %}
 
-2) Make a negative function of the function for calculating the expected margin.\\
+2) Make a negative function of the function for calculating the expected margin.
 {% highlight python %}
 def calculate_negative_expected_margin(param, *args):
     single_price = param
@@ -173,7 +177,7 @@ def calculate_negative_expected_margin(param, *args):
     return negative_expected_margin
 {% endhighlight %}
 
-3) Maximize the expected margin by minimizing the negative expected margin.\\
+3) Maximize the expected margin by minimizing the negative expected margin.
 {% highlight python %}
 def maxize_expected_margin(args):
     # Make a list of initial parameter guesses (single_price)
@@ -186,13 +190,13 @@ def maxize_expected_margin(args):
     return optimal_single_price
 {% endhighlight %}
 
-4) Calculate the optimal single price maximizing margin.\\
+4) Calculate the optimal single price maximizing margin.
 {% highlight python %}
 args = (optimal_a, optimal_b)
 optimal_single_price = maxize_expected_margin(args)
 print("optimal single price: ${:.2f}".format(optimal_single_price))
 {% endhighlight %}
-optimal single price: $20818.70\\
+optimal single price: $20818.70
 
 ## What would the expected total contribution have been for the 4,000 bids?
 $$ExpectedTotalContribution = \sum_{i=1}^{4000}{[UnitNumber_i * (SinglePrice - Cost)]}$$
@@ -217,7 +221,7 @@ def calculate_expected_total_contribution(unit_numbers, optimal_price, cost, a, 
 expected_total_contribution = calculate_expected_total_contribution(all_data[UNIT_NUMBER], optimal_single_price, COST, optimal_a, optimal_b)
 print("The expected total contribution: ${:.2f}".format(expected_total_contribution))
 {% endhighlight %}
-The expected total contribution: $241083842.21\\
+The expected total contribution: $241083842.21
 
 ## How does this compare to the contribution that Fjord actually received?
 $$ActualTotalContribution = \sum_{i=1}^{4000}{[Win_i * UnitNumber_i * (UnitPrice_i - Cost)]}$$
@@ -237,7 +241,7 @@ print("Improvement: ${:.2f}, {:.2f}%".format(
 ))
 {% endhighlight %}
 The actual total contribution: $171829002\\
-Improvement: $69254840.21, 40.30%\\
+Improvement: $69254840.21, 40.30%
 
 # Assignment 2
 Fjord discovers that bids 1 through 2,000 were to police departments, and the bids 2,001 through 4,000 were to corporate buyers.
@@ -250,7 +254,7 @@ args = (police_data[P], police_data[WIN])
 police_optimal_a, police_optimal_b = maximize_log_likelihood(args)
 print("Police | a: {:.2f}, b: {:.2f}".format(police_optimal_a, police_optimal_b))
 {% endhighlight %}
-Police | a: -14.22, b: 20.01\\
+Police | a: -14.22, b: 20.01
 
 2) Calculate the values of a and b for corporate buyer.
 {% highlight python %}
@@ -259,7 +263,7 @@ args = (corporate_buyer_data[P], corporate_buyer_data[WIN])
 corporate_buyer_optimal_a, corporate_buyer_optimal_b = maximize_log_likelihood(args)
 print("Corporate buyer | a: {:.2f}, b: {:.2f}".format(corporate_buyer_optimal_a, corporate_buyer_optimal_b))
 {% endhighlight %}
-Corporate buyer | a: -27.88, b: 28.81\\
+Corporate buyer | a: -27.88, b: 28.81
 
 ## What are the optimum price Fjord should offer to the police?
 
@@ -268,7 +272,7 @@ args = (police_optimal_a, police_optimal_b)
 police_optimal_single_price = maxize_expected_margin(args)
 print("Police | optimal price: ${:.2f}".format(police_optimal_single_price))
 {% endhighlight %}
-Police | optimal price: $17638.54\\
+Police | optimal price: $17638.54
 
 ## To corporate buyers?
 
@@ -277,7 +281,7 @@ args = (corporate_buyer_optimal_a, corporate_buyer_optimal_b)
 corporate_buyer_optimal_single_price = maxize_expected_margin(args)
 print("Corporate buyer | optimal price: ${:.2f}".format(corporate_buyer_optimal_single_price))
 {% endhighlight %}
-Corporate buyer | optimal price: $22431.46\\
+Corporate buyer | optimal price: $22431.46
 
 ## What would the expected contribution have been if Fjord had used the price in the 4,000 bids in the database?
 
@@ -299,7 +303,7 @@ expected_total_contribution = calculate_expected_total_contribution(
 new_expected_total_contribution = police_expected_total_contribution + expected_total_contribution
 print("The expected total contribution: ${:.2f}".format(new_expected_total_contribution))
 {% endhighlight %}
-The expected total contribution: $308695819.88\\
+The expected total contribution: $308695819.88
 
 ## What is the difference between the contribution actually received and the best that Ford could do when it could not differentiate between the police and corporate buyers?
 
@@ -314,14 +318,14 @@ print("Improvement from the best that Fjord could do when it could not different
 ))
 {% endhighlight %}
 Improvement from the contribution actually received: $136866817.88, 79.65%\\
-Improvement from the best that Fjord could do when it could not differentiate between the police and corporate buyers: $54579338.40, 21.48%\\
+Improvement from the best that Fjord could do when it could not differentiate between the police and corporate buyers: $54579338.40, 21.48%
 
 # Assignment 3
 $$c$$ is the size of the order. \\
 The new model: $$ \rho(p) = 1 / (1 + exp(a + bp + cs))$$
 
 ## What is the resulting improvement in total log likelihood?
-1) Calculate winning probabilities using the model.\\
+1) Calculate winning probabilities using the model.
 {% highlight python %}
 def calculate_2_factor_winning_prob(a, b, c, p, unit_number):
     """
@@ -336,7 +340,7 @@ def calculate_2_factor_winning_prob(a, b, c, p, unit_number):
     return winning_prob
 {% endhighlight %}
 2) Make a function for calculating a sum of log likelihoods.\\
-$$logLikelihood = log(\rho^y (1-\rho)^{1-y})$$\\
+$$logLikelihood = log(\rho^y (1-\rho)^{1-y})$$
 {% highlight python %}
 def calculate_2_factor_sum_of_log_likelihood(a, b, c, args):
     """
@@ -356,7 +360,7 @@ def calculate_2_factor_sum_of_log_likelihood(a, b, c, args):
     return log_likelihood_sum
 {% endhighlight %}
 
-3) Becasue numpy has only a minize optimizer, make a negative function of the function for calculating a sum of log likelihoods.\\
+3) Becasue numpy has only a minize optimizer, make a negative function of the function for calculating a sum of log likelihoods.
 {% highlight python %}
 def calculate_2_factor_negative_sum_of_log_likelihood(param, *args):
     a, b, c = param
@@ -364,7 +368,7 @@ def calculate_2_factor_negative_sum_of_log_likelihood(param, *args):
     return negative_log_likelihood_sum
 {% endhighlight %}
 
-4) Maximize the sum of log likelihood by minimizing the negative sum of log likelihoods.\\
+4) Maximize the sum of log likelihood by minimizing the negative sum of log likelihoods.
 {% highlight python %}
 def maximize_2_factor_log_likelihood(args):
     """
@@ -382,7 +386,7 @@ def maximize_2_factor_log_likelihood(args):
     return optimal_a, optimal_b, optimal_c
 {% endhighlight %}
 
-5) Calculate the values of a and b.\\
+5) Calculate the values of a and b.
 {% highlight python %}
 # Previous model
 args = (all_data[P], all_data[WIN])
@@ -408,7 +412,7 @@ print("Improvement: ${:.2f}, {:.2f}%".format(
     np.abs((new_total_log_likelihood_sum / previous_log_likelihood_sum - 1) * 100)
 ))
 {% endhighlight %}
-Improvement: $1241.95, 54.91%\\
+Improvement: $1241.95, 54.91%
 
 ## How does this compare with the improvement from differentiating police and corporate sales?
 
@@ -431,13 +435,13 @@ print("Improvement: ${:.2f}, {:.2f}%".format(
     np.abs((new_total_log_likelihood_sum / previous_total_log_likelihood_sum - 1) * 100)
 ))
 {% endhighlight %}
-Improvement: $10.27, 1.00%\\
+Improvement: $10.27, 1.00%
 
 ## What are the optimal prices Fjord should charge for orders of 20 cars and for orders of 40 cars to police departments and to corporate purchasers, respectively?
 Based on a and b we calcuated, we need to find a single price maximizing sum of margin. For that,\\
 1) Calculate the expected margin.\\
 cost = 15000\\
-$$expectedMargin = (singlePrice - cost) * \rho(p)$$\\
+$$expectedMargin = (singlePrice - cost) * \rho(p)$$
 {% highlight python %}
 def calculate_2_factor_expected_margin(single_price, args):
     """
@@ -452,7 +456,7 @@ def calculate_2_factor_expected_margin(single_price, args):
     return expected_margin
 {% endhighlight %}
 
-2) Make a negative function of the function for calculating the expected margin.\\
+2) Make a negative function of the function for calculating the expected margin.
 {% highlight python %}
 def calculate_2_factor_negative_expected_margin(param, *args):
     single_price = param
@@ -460,7 +464,7 @@ def calculate_2_factor_negative_expected_margin(param, *args):
     return negative_expected_margin
 {% endhighlight %}
 
-3) Maximize the expected margin by minimizing the negative expected margin.\\
+3) Maximize the expected margin by minimizing the negative expected margin.
 {% highlight python %}
 def maximize_2_factor_expected_margin(args):
     # Make a list of initial parameter guesses (single_price)
@@ -492,7 +496,7 @@ print("The optimal price of 40 cars to corporate purchasers: ${:.2f}".format(cor
 The optimal price of 20 cars to police departments: $17616.11\\
 The optimal price of 40 cars to police departments: $17214.42\\
 The optimal price of 20 cars to corporate purchasers: $22441.15\\
-The optimal price of 40 cars to corporate purchasers: $22525.99\\
+The optimal price of 40 cars to corporate purchasers: $22525.99
 
 ## Calculate optimal price for all order sizes from 10 through 60 vehicles for both police and corporate sales, and use these price to determine the total contribution margin Fjord would have received if it had used these prices in the 4,000 historic bids.
 
@@ -517,7 +521,7 @@ print(corporate_buyer_optimal_prices)
 {% endhighlight %}
 
 # Assignment 4
-The police version of the Cornet Elizabeth costs  16,000tomanufactureversus16,000tomanufactureversus 15,000 for the corporate version.
+The police version of the Cornet Elizabeth costs 16,000 to manufacture versus 15,000 for the corporate version.
 ## How would this change the optimal price charged to police departments for 20 vehicles? For 40?
 {% highlight python %}
 NEW_COST = 16000
