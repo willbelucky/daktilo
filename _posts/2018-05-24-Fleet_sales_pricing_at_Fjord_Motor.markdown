@@ -3,7 +3,7 @@ layout: post
 title:  "Fleet sales pricing at Fjord Motor"
 subtitle: "Robert Phillips"
 date:   2018-05-24 00:00:00
-categories: [paper&book]
+categories: [paper_book]
 ---
 
 # Case source
