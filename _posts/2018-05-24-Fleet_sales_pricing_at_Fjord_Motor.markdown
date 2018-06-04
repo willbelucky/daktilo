@@ -41,15 +41,15 @@ def get_all_data(MSRP):
     Get data of all bids.
 
     :return data: (DataFrame) 8 columns * 4000 rows
-        columns unit_number         | (int) The number of vehicles.
-                unit_price          | (int) The price of a vehicle.
-                total_price         | (int) unit_number * unit_price
-                win                 | (int) If Fjord win a fleet bid, win is 1. Else, win is 0.
-                discount_rate       | (float) ( MSRP(the_manufacturer's_suggested_retail_price) - unit_price ) / MSRP
-                unit_margin         | (int) MSRP - cost
-                unit_sold_number    | (int) unit_number * win
-                total_margin        | (int) unit_margin * unit_sold_number
-                p                   | (float) unit_price / MSRP.
+        columns unit_number         (int) The number of vehicles.
+                unit_price          (int) The price of a vehicle.
+                total_price         (int) unit_number * unit_price
+                win                 (int) If Fjord win a fleet bid, win is 1. Else, win is 0.
+                discount_rate       (float) ( MSRP(the_manufacturer's_suggested_retail_price) - unit_price ) / MSRP
+                unit_margin         (int) MSRP - cost
+                unit_sold_number    (int) unit_number * win
+                total_margin        (int) unit_margin * unit_sold_number
+                p                   (float) unit_price / MSRP.
     """
     data = pd.read_csv(DATA_DIR)
     data[P] = data[UNIT_PRICE] / MSRP
@@ -61,15 +61,15 @@ def get_police_data(MSRP):
     The bids 1 through 2000 were to police departments.
 
     :return data: (DataFrame) 8 columns * 2000 rows
-        columns unit_number         | (int) The number of vehicles.
-                unit_price          | (int) The price of a vehicle.
-                total_price         | (int) unit_number * unit_price
-                win                 | (int) If Fjord win a fleet bid, win is 1. Else, win is 0.
-                discount_rate       | (float) ( MSRP(the_manufacturer's_suggested_retail_price) - unit_price ) / MSRP
-                unit_margin         | (int) MSRP - cost
-                unit_sold_number    | (int) unit_number * win
-                total_margin        | (int) unit_margin * unit_sold_number
-                p                   | (float) unit_price / MSRP.
+        columns unit_number         (int) The number of vehicles.
+                unit_price          (int) The price of a vehicle.
+                total_price         (int) unit_number * unit_price
+                win                 (int) If Fjord win a fleet bid, win is 1. Else, win is 0.
+                discount_rate       (float) ( MSRP(the_manufacturer's_suggested_retail_price) - unit_price ) / MSRP
+                unit_margin         (int) MSRP - cost
+                unit_sold_number    (int) unit_number * win
+                total_margin        (int) unit_margin * unit_sold_number
+                p                   (float) unit_price / MSRP.
     """
     data = get_all_data(MSRP)
     data = data.iloc[:2000, :]
@@ -81,15 +81,15 @@ def get_corporate_buyer_data(MSRP):
     The bids 2001 through 4000 were to corporate buyers.
 
     :return data: (DataFrame) 8 columns * 2000 rows
-        columns unit_number         | (int) The number of vehicles.
-                unit_price          | (int) The price of a vehicle.
-                total_price         | (int) unit_number * unit_price
-                win                 | (int) If Fjord win a fleet bid, win is 1. Else, win is 0.
-                discount_rate       | (float) ( MSRP(the_manufacturer's_suggested_retail_price) - unit_price ) / MSRP
-                unit_margin         | (int) MSRP - cost
-                unit_sold_number    | (int) unit_number * win
-                total_margin        | (int) unit_margin * unit_sold_number
-                p                   | (float) unit_price / MSRP.
+        columns unit_number         (int) The number of vehicles.
+                unit_price          (int) The price of a vehicle.
+                total_price         (int) unit_number * unit_price
+                win                 (int) If Fjord win a fleet bid, win is 1. Else, win is 0.
+                discount_rate       (float) ( MSRP(the_manufacturer's_suggested_retail_price) - unit_price ) / MSRP
+                unit_margin         (int) MSRP - cost
+                unit_sold_number    (int) unit_number * win
+                total_margin        (int) unit_margin * unit_sold_number
+                p                   (float) unit_price / MSRP.
     """
     data = get_all_data(MSRP)
     data = data.iloc[2000:, :]
@@ -132,8 +132,8 @@ def calculate_sum_of_log_likelihood(a, b, args):
     :param a: (float) An intercept of the model.
     :param b: (float) A beta of the model.
     :param args: (tuple)
-        p           | (pd.Series[float]) unit_price / MSRP.
-        observed_y  | (pd.Series[int]) If Fjord win a fleet bid, win is 1. Else, win is 0.
+        p           (pd.Series[float]) unit_price / MSRP.
+        observed_y  (pd.Series[int]) If Fjord win a fleet bid, win is 1. Else, win is 0.
         
     :return log_likelihood_sum: (float) The sum of log likelihood.
     """
@@ -316,10 +316,10 @@ Fjord discovers that bids 1 through 2,000 were to police departments, and the bi
 police_data = get_police_data(MSRP)
 args = (police_data[P], police_data[WIN])
 police_optimal_a, police_optimal_b = maximize_log_likelihood(args)
-print("Police | a: {:.2f}, b: {:.2f}".format(police_optimal_a, police_optimal_b))
+print("Police a: {:.2f}, b: {:.2f}".format(police_optimal_a, police_optimal_b))
 ```
 
-**Police | a: -14.22, b: 20.01**
+**Police a: -14.22, b: 20.01**
 
 
 2) Calculate the values of a and b for corporate buyer.
@@ -329,10 +329,10 @@ print("Police | a: {:.2f}, b: {:.2f}".format(police_optimal_a, police_optimal_b)
 corporate_buyer_data = get_corporate_buyer_data(MSRP)
 args = (corporate_buyer_data[P], corporate_buyer_data[WIN])
 corporate_buyer_optimal_a, corporate_buyer_optimal_b = maximize_log_likelihood(args)
-print("Corporate buyer | a: {:.2f}, b: {:.2f}".format(corporate_buyer_optimal_a, corporate_buyer_optimal_b))
+print("Corporate buyer a: {:.2f}, b: {:.2f}".format(corporate_buyer_optimal_a, corporate_buyer_optimal_b))
 ```
 
-**Corporate buyer | a: -27.88, b: 28.81**
+**Corporate buyer a: -27.88, b: 28.81**
 
 
 ## What are the optimum price Fjord should offer to the police?
@@ -341,10 +341,10 @@ print("Corporate buyer | a: {:.2f}, b: {:.2f}".format(corporate_buyer_optimal_a,
 ```python
 args = (police_optimal_a, police_optimal_b)
 police_optimal_single_price = maxize_expected_margin(args)
-print("Police | optimal price: ${:.2f}".format(police_optimal_single_price))
+print("Police optimal price: ${:.2f}".format(police_optimal_single_price))
 ```
 
-**Police | optimal price: $17638.54**
+**Police optimal price: $17638.54**
 
 
 ## To corporate buyers?
@@ -353,10 +353,10 @@ print("Police | optimal price: ${:.2f}".format(police_optimal_single_price))
 ```python
 args = (corporate_buyer_optimal_a, corporate_buyer_optimal_b)
 corporate_buyer_optimal_single_price = maxize_expected_margin(args)
-print("Corporate buyer | optimal price: ${:.2f}".format(corporate_buyer_optimal_single_price))
+print("Corporate buyer optimal price: ${:.2f}".format(corporate_buyer_optimal_single_price))
 ```
 
-**Corporate buyer | optimal price: $22431.46**
+**Corporate buyer optimal price: $22431.46**
 
 
 ## What would the expected contribution have been if Fjord had used the price in the 4,000 bids in the database?
@@ -439,9 +439,9 @@ def calculate_2_factor_sum_of_log_likelihood(a, b, c, args):
     :param b: (float) A coefficient for p of the bid.
     :param c: (float) A coefficient for the size of the bid.
     :param args: (tuple)
-        p           | (pd.Series[float]) unit_price / MSRP.
-        unit_number | (pd.Series[int]) The size of the bid.
-        observed_y  | (pd.Series[int]) If Fjord win a fleet bid, win is 1. Else, win is 0.
+        p           (pd.Series[float]) unit_price / MSRP.
+        unit_number (pd.Series[int]) The size of the bid.
+        observed_y  (pd.Series[int]) If Fjord win a fleet bid, win is 1. Else, win is 0.
         
     :return log_likelihood_sum: (float) The sum of log likelihood.
     """
