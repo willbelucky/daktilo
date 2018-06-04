@@ -98,13 +98,10 @@ def get_corporate_buyer_data(MSRP):
 
 # Assignment 1
 
-$\rho$ is the probability of winning the bid.
-
-$a$ and $b$ are the parameters to be estimated.
-
-$p$ is the price that Fjord bid on a deal expressed as a fraction of the MSRP of \$25,000 per units; that is, if Fjord id \$20,000 per unit, p would e equal to 20,000/25,000 or 0.8.
-
-A model is $\rho(p) = \frac{1}{1 + exp(a + bp)}$.
+$$\rho$$ is the probability of winning the bid.\\
+$$a$$ and $$b$$ are the parameters to be estimated.\\
+$$p$$ is the price that Fjord bid on a deal expressed as a fraction of the MSRP of $25,000 per units; that is, if Fjord id $20,000 per unit, p would e equal to 20,000/25,000 or 0.8.\\
+A model is $$\rho(p) = \frac{1}{1 + exp(a + bp)}$$.
 
 ## What are the values of a and b that maximize the sum of log likelihoods?
 
@@ -126,7 +123,7 @@ def calculate_winning_prob(a, b, p):
 
 2) Make a function for calculating a sum of log likelihoods.
 
-log_likelihood = $log(\rho^y (1-\rho)^{1-y})$
+log_likelihood = $$log(\rho^y (1-\rho)^{1-y})$$
 
 
 ```python
@@ -186,7 +183,7 @@ optimal_a, optimal_b = maximize_log_likelihood(args)
 print("a: {:.2f}, b: {:.2f}".format(optimal_a, optimal_b))
 ```
 
-    a: -7.76, b: 9.16
+**a: -7.76, b: 9.16**
 
 
 ## What is the optimum price Fjord should offer, assuming it is going to offer a single price for each bid?
@@ -195,9 +192,8 @@ Based on a and b we calcuated, we need to find a single price maximizing sum of 
 
 1) Calculate the expected margin.
 
-cost = 15000
-
-expected_margin = (single_price - cost) * $\rho(p)$
+cost = 15000\\
+expected_margin = (single_price - cost) * $$\rho(p)$$
 
 
 ```python
@@ -249,7 +245,7 @@ optimal_single_price = maxize_expected_margin(args)
 print("optimal single price: ${:.2f}".format(optimal_single_price))
 ```
 
-    optimal single price: $20818.70
+**optimal single price: $20818.70**
 
 
 ## What would the expected total contribution have been for the 4,000 bids?
@@ -279,7 +275,7 @@ expected_total_contribution = calculate_expected_total_contribution(all_data[UNI
 print("The expected total contribution: ${:.2f}".format(expected_total_contribution))
 ```
 
-    The expected total contribution: $241083842.21
+**The expected total contribution: $241083842.21**
 
 
 ## How does this compare to the contribution that Fjord actually received?
@@ -303,8 +299,8 @@ print("Improvement: ${:.2f}, {:.2f}%".format(
 ))
 ```
 
-    The actual total contribution: $171829002
-    Improvement: $69254840.21, 40.30%
+**The actual total contribution: $171829002**\\
+**Improvement: $69254840.21, 40.30%**
 
 
 # Assignment 2
@@ -323,7 +319,7 @@ police_optimal_a, police_optimal_b = maximize_log_likelihood(args)
 print("Police | a: {:.2f}, b: {:.2f}".format(police_optimal_a, police_optimal_b))
 ```
 
-    Police | a: -14.22, b: 20.01
+**Police | a: -14.22, b: 20.01**
 
 
 2) Calculate the values of a and b for corporate buyer.
@@ -336,7 +332,7 @@ corporate_buyer_optimal_a, corporate_buyer_optimal_b = maximize_log_likelihood(a
 print("Corporate buyer | a: {:.2f}, b: {:.2f}".format(corporate_buyer_optimal_a, corporate_buyer_optimal_b))
 ```
 
-    Corporate buyer | a: -27.88, b: 28.81
+**Corporate buyer | a: -27.88, b: 28.81**
 
 
 ## What are the optimum price Fjord should offer to the police?
@@ -348,7 +344,7 @@ police_optimal_single_price = maxize_expected_margin(args)
 print("Police | optimal price: ${:.2f}".format(police_optimal_single_price))
 ```
 
-    Police | optimal price: $17638.54
+**Police | optimal price: $17638.54**
 
 
 ## To corporate buyers?
@@ -360,7 +356,7 @@ corporate_buyer_optimal_single_price = maxize_expected_margin(args)
 print("Corporate buyer | optimal price: ${:.2f}".format(corporate_buyer_optimal_single_price))
 ```
 
-    Corporate buyer | optimal price: $22431.46
+**Corporate buyer | optimal price: $22431.46**
 
 
 ## What would the expected contribution have been if Fjord had used the price in the 4,000 bids in the database?
@@ -385,7 +381,7 @@ new_expected_total_contribution = police_expected_total_contribution + expected_
 print("The expected total contribution: ${:.2f}".format(new_expected_total_contribution))
 ```
 
-    The expected total contribution: $308695819.88
+**The expected total contribution: $308695819.88**
 
 
 ## What is the difference between the contribution actually received and the best that Fjord could do when it could not differentiate between the police and corporate buyers?
@@ -402,15 +398,15 @@ print("Improvement from the best that Fjord could do when it could not different
 ))
 ```
 
-    Improvement from the contribution actually received: $136866817.88, 79.65%
-    Improvement from the best that Fjord could do when it could not differentiate between the police and corporate buyers: $54579338.40, 21.48%
+**Improvement from the contribution actually received: $136866817.88, 79.65%**\\
+**Improvement from the best that Fjord could do when it could not differentiate between the police and corporate buyers: $54579338.40, 21.48%**
 
 
 # Assignment 3
 
-$c$ is the size of the order.
+$$c$$ is the size of the order.
 
-The new model: $ \rho(p) = 1 / (1 + exp(a + bp + cs))$
+The new model: $$ \rho(p) = 1 / (1 + exp(a + bp + cs))$$
 
 ## What is the resulting improvement in total log likelihood?
 
@@ -433,7 +429,7 @@ def calculate_2_factor_winning_prob(a, b, c, p, unit_number):
 
 2) Make a function for calculating a sum of log likelihoods.
 
-log_likelihood = $log(\rho^y (1-\rho)^{1-y})$
+log_likelihood = $$log(\rho^y (1-\rho)^{1-y})$$
 
 
 ```python
@@ -514,15 +510,7 @@ print("Improvement: ${:.2f}, {:.2f}%".format(
 ))
 ```
 
-    /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/ipykernel_launcher.py:15: RuntimeWarning: divide by zero encountered in log
-      from ipykernel import kernelapp as app
-    /Users/willbe/Library/Python/3.6/lib/python/site-packages/scipy/optimize/optimize.py:643: RuntimeWarning: invalid value encountered in double_scalars
-      grad[k] = (f(*((xk + d,) + args)) - f0) / d[k]
-    /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/ipykernel_launcher.py:15: RuntimeWarning: divide by zero encountered in log
-      from ipykernel import kernelapp as app
-
-
-    Improvement: $1241.95, 54.91%
+**Improvement: $1241.95, 54.91%**
 
 
 ## How does this compare with the improvement from differentiating police and corporate sales?
@@ -548,7 +536,7 @@ print("Improvement: ${:.2f}, {:.2f}%".format(
 ))
 ```
 
-    Improvement: $10.27, 1.00%
+**Improvement: $10.27, 1.00%**
 
 
 ## What are the optimal prices Fjord should charge for orders of 20 cars and for orders of 40 cars to police departments and to corporate purchasers, respectively?
@@ -557,9 +545,8 @@ Based on a and b we calcuated, we need to find a single price maximizing sum of 
 
 1) Calculate the expected margin.
 
-cost = 15000
-
-expected_margin = (single_price - cost) * $\rho(p)$
+cost = 15000\\
+expected_margin = (single_price - cost) * $$\rho(p)$$
 
 
 ```python
@@ -620,10 +607,10 @@ corporate_buyer_40_cars_optimal_price = maximize_2_factor_expected_margin(corpor
 print("The optimal price of 40 cars to corporate purchasers: ${:.2f}".format(corporate_buyer_40_cars_optimal_price))
 ```
 
-    The optimal price of 20 cars to police departments: $17616.11
-    The optimal price of 40 cars to police departments: $17214.42
-    The optimal price of 20 cars to corporate purchasers: $22441.15
-    The optimal price of 40 cars to corporate purchasers: $22525.99
+**The optimal price of 20 cars to police departments: $17616.11**\\
+**The optimal price of 40 cars to police departments: $17214.42**\\
+**The optimal price of 20 cars to corporate purchasers: $22441.15**\\
+**The optimal price of 40 cars to corporate purchasers: $22525.99**
 
 
 ## Calculate optimal price for all order sizes from 10 through 60 vehicles for both police and corporate sales, and use these price to determine the total contribution margin Fjord would have received if it had used these prices in the 4,000 historic bids.
@@ -670,7 +657,7 @@ pd.DataFrame(data={'police': police_optimal_prices,
 </style>
 <table border="1" class="dataframe">
   <thead>
-    <tr style="text-align: right;">
+    <tr style="text-align: center;">
       <th></th>
       <th>corporate_buyer</th>
       <th>police</th>
@@ -957,6 +944,5 @@ police_40_cars_optimal_price = maximize_2_factor_expected_margin(police_40_cars_
 print("The optimal price of 40 cars to police departments: ${:.2f}".format(police_40_cars_optimal_price))
 ```
 
-    The optimal price of 20 cars to police departments: $18138.28
-    The optimal price of 40 cars to police departments: $17828.91
-
+**The optimal price of 20 cars to police departments: $18138.28**\\
+**The optimal price of 40 cars to police departments: $17828.91**
