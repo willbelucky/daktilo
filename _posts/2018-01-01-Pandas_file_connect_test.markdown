@@ -3,7 +3,7 @@ layout: post
 title:  "Python pandas read_excel vs. read_csv vs. read_hdf"
 subtitle: "What is the fastest way to save and read pandas.DataFrame?"
 date:   2018-01-01 14:37:00
-categories: [programming]
+categories: [experiment]
 ---
 # Python code
 {% highlight python %}
