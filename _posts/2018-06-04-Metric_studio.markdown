@@ -6,6 +6,8 @@ date:   2018-06-04 00:00:00
 categories: [paper_book]
 ---
 
+![Cover](https://dl.dropboxusercontent.com/s/r4lvcu8j21hletr/2018-06-04-Metric_studio-cover.jpeg)
+
 # 실증적 연구의 필요성
 ## CAPM
 p.40)\\
