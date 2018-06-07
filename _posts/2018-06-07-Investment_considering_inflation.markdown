@@ -67,7 +67,7 @@ scale_colour_manual(values=c(Stock='red', Saving='blue', House='green', consumer
 ylab('Returns') + xlab('Time') + ggtitle('Stock vs. House vs. Saving, 2000.1~2018.5') + theme(plot.title=element_text(hjust=0.5))
 ```
 ![without_inflation](https://dl.dropboxusercontent.com/s/w6q2bwxjm0zama4/2018-06-07-Investment_considering_inflation-without_inflation.png)
-Without considering inflation, saving looks good enough. The return of saving is more than halves of the returns of stock and house.
+Without considering inflation, saving looks good enough. The return of saving(92%) is more than halves of the returns of stock(163%) and house(137%).
 
 ## Without considering inflation
 ```r
@@ -79,6 +79,6 @@ scale_colour_manual(values=c(Stock='red', Saving='blue', House='green')) +
 ylab('Returns') + xlab('Time') + ggtitle('Stock vs. House vs. Saving, 2000.1~2018.5') + theme(plot.title=element_text(hjust=0.5))
 ```
 ![with_inflation](https://dl.dropboxusercontent.com/s/glu3f7exb9nfhve/2018-06-07-Investment_considering_inflation-with_inflation.png)
-With considering inflation, saving is not attractive anymore. The return of saving is 30% of the return of stock and 40% of the return of house.
+With considering inflation, saving is not attractive anymore. The return of saving(21%) is 32% of the return of stock(66%) and 42% of the return of house(50%).
 Of course, saving is the most stable investment. The final decision is up to you.
 I just want to show you the power of inflation in long-term investments.
