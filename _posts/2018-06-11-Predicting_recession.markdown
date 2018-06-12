@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Predicting recession"
-subtitle: "Using market capital & asset & capital"
+subtitle: "Using market-cap & capital in United State & Korea"
 date:   2018-06-11 00:00:00
 categories: [experiment]
 ---
